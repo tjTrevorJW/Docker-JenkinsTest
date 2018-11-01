@@ -9,7 +9,7 @@ public class WindowTest {
   @Test
   public void f() {
 	  System.setProperty("webdriver.chrome.driver", 
-				"C:\\Users\\Trevor.WhiteLocal\\Desktop\\Selenium\\chromedriver.exe");
+				"src/chromedriver.exe");
 	  WebDriver driver = new ChromeDriver();
 	  driver.get("https://the-internet.herokuapp.com/windows");
 	  
