@@ -13,13 +13,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WindowTest {
+	
   @Test
-  public void f() throws MalformedURLException {
-	  System.setProperty("webdriver.chrome.driver", 
-				"src/chromedriver.exe");
+  public void newWindowChrome() throws MalformedURLException {
 	  DesiredCapabilities chrome = DesiredCapabilities.chrome();
 	  WebDriver driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), chrome);
-	  //WebDriver driver = new ChromeDriver();
 	  driver.get("https://the-internet.herokuapp.com/windows");
 	  
 	  driver.findElement(By.xpath("//*[contains(text(), 'Click Here')]")).click();
@@ -29,6 +27,23 @@ public class WindowTest {
 		  if (driver.getTitle().equals("New Window")){
 			  break;
 		  }
+	  }
+	  String result = driver.findElement(By.xpath("/html/body/div/h3")).getText();
+	  System.out.println(result);
+	  driver.quit();
+  }
+  
+  @Test
+  public void newWindowFirefox() throws MalformedURLException, InterruptedException {
+	  DesiredCapabilities firefox = DesiredCapabilities.firefox();
+	  WebDriver driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), firefox);
+	  driver.get("https://the-internet.herokuapp.com/windows");
+	  
+	  driver.findElement(By.xpath("//*[contains(text(), 'Click Here')]")).click();
+	  Thread.sleep(2000);
+	  System.out.println(driver.getWindowHandles());
+	  for(String windowHandle : driver.getWindowHandles()) {
+		  driver.switchTo().window(windowHandle);
 	  }
 	  String result = driver.findElement(By.xpath("/html/body/div/h3")).getText();
 	  System.out.println(result);
