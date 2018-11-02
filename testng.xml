@@ -4,6 +4,7 @@
   <test thread-count="5" verbose="2" name="Default test">
     <classes>
       <class name="com.test.WindowTest"/>
+      <class name="com.test.LoginTest"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->
