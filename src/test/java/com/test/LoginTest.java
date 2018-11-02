@@ -26,5 +26,6 @@ public class LoginTest {
 	  
 	  String text = driver.findElement(By.tagName("body")).getText();
 	  Assert.assertTrue(text.contains("You logged into a secure area"), "Text not found!");
+	  driver.quit();
   }
 }
