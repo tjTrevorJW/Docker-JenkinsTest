@@ -29,7 +29,7 @@ public class LoginTest {
 	  driver.findElement(By.xpath("//*[@id=\"login\"]/button")).click();
 	  
 	  String text = driver.findElement(By.tagName("body")).getText();
-	  Assert.assertTrue(text.contains("You logged into a secure g"), "Text not found!");
+	  Assert.assertTrue(text.contains("You logged into a secure area"), "Text not found!");
   }
   
   @AfterMethod

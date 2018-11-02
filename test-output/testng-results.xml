@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11895" started-at="2018-11-02T16:45:35Z" finished-at="2018-11-02T16:45:47Z">
+  <suite name="Default suite" duration-ms="3116" started-at="2018-11-02T18:55:05Z" finished-at="2018-11-02T18:55:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11895" started-at="2018-11-02T16:45:35Z" finished-at="2018-11-02T16:45:47Z">
-      <class name="com.test.WindowTest">
-        <test-method status="PASS" signature="newWindowChrome()[pri:0, instance:com.test.WindowTest@61832929]" name="newWindowChrome" duration-ms="3198" started-at="2018-11-02T16:45:35Z" finished-at="2018-11-02T16:45:38Z">
+    <test name="Default test" duration-ms="3116" started-at="2018-11-02T18:55:05Z" finished-at="2018-11-02T18:55:08Z">
+      <class name="com.test.LoginTest">
+        <test-method status="PASS" signature="loginChrome()[pri:0, instance:com.test.LoginTest@61832929]" name="loginChrome" duration-ms="3033" started-at="2018-11-02T18:55:05Z" finished-at="2018-11-02T18:55:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newWindowChrome -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.test.WindowTest@61832929]" name="tearDown" is-config="true" duration-ms="60" started-at="2018-11-02T16:45:38Z" finished-at="2018-11-02T16:45:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="newWindowFirefox()[pri:0, instance:com.test.WindowTest@61832929]" name="newWindowFirefox" duration-ms="7648" started-at="2018-11-02T16:45:38Z" finished-at="2018-11-02T16:45:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- newWindowFirefox -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.test.WindowTest@61832929]" name="tearDown" is-config="true" duration-ms="967" started-at="2018-11-02T16:45:46Z" finished-at="2018-11-02T16:45:47Z">
+        </test-method> <!-- loginChrome -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.test.LoginTest@61832929]" name="tearDown" is-config="true" duration-ms="58" started-at="2018-11-02T18:55:08Z" finished-at="2018-11-02T18:55:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.test.WindowTest -->
+      </class> <!-- com.test.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
