@@ -1,5 +1,6 @@
 package com.test;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -14,10 +15,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WindowTest {
 	
+	WebDriver driver;
+	
   @Test
   public void newWindowChrome() throws MalformedURLException {
 	  DesiredCapabilities chrome = DesiredCapabilities.chrome();
-	  WebDriver driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), chrome);
+	  driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), chrome);
 	  driver.get("https://the-internet.herokuapp.com/windows");
 	  
 	  driver.findElement(By.xpath("//*[contains(text(), 'Click Here')]")).click();
@@ -30,13 +33,12 @@ public class WindowTest {
 	  }
 	  String result = driver.findElement(By.xpath("/html/body/div/h3")).getText();
 	  System.out.println(result);
-	  driver.quit();
   }
   
   @Test
   public void newWindowFirefox() throws MalformedURLException, InterruptedException {
 	  DesiredCapabilities firefox = DesiredCapabilities.firefox();
-	  WebDriver driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), firefox);
+	  driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), firefox);
 	  driver.get("https://the-internet.herokuapp.com/windows");
 	  
 	  driver.findElement(By.xpath("//*[contains(text(), 'Click Here')]")).click();
@@ -47,6 +49,10 @@ public class WindowTest {
 	  }
 	  String result = driver.findElement(By.xpath("/html/body/div/h3")).getText();
 	  System.out.println(result);
+  }
+  
+  @AfterMethod
+  public void tearDown() {
 	  driver.quit();
   }
 }

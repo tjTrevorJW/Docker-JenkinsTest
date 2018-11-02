@@ -9,13 +9,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest {
+	
+	WebDriver driver;
+	
   @Test
   public void loginChrome() throws MalformedURLException {
 	  DesiredCapabilities chrome = DesiredCapabilities.chrome();
-	  WebDriver driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), chrome);
+	  driver = new RemoteWebDriver(new URL("http://10.238.242.60:4444/wd/hub"), chrome);
 	  
 	  driver.get("http://the-internet.herokuapp.com/login");
 	  WebElement username = driver.findElement(By.id("username"));
@@ -25,7 +29,11 @@ public class LoginTest {
 	  driver.findElement(By.xpath("//*[@id=\"login\"]/button")).click();
 	  
 	  String text = driver.findElement(By.tagName("body")).getText();
-	  Assert.assertTrue(text.contains("You logged into a secure area"), "Text not found!");
+	  Assert.assertTrue(text.contains("You logged into a secure g"), "Text not found!");
+  }
+  
+  @AfterMethod
+  public void tearDown() {
 	  driver.quit();
   }
 }
