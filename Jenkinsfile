@@ -10,7 +10,7 @@ pipeline {
 			}
 		
 		}
-	stage('Testing Stage') {
+		stage('Testing Stage') {
 			steps {
 				withMaven(maven : 'Maven') {
 					sh 'mvn test'
@@ -19,15 +19,13 @@ pipeline {
 		
 		}
 	
-	}
-	stage('Deployment Stage') {
+		stage('Deployment Stage') {
 			steps {
 				withMaven(maven : 'Maven') {
 					sh 'mvn deploy'
 				}
 			}
-		
-		}
-	
+		}	
 	}
+	
 }
