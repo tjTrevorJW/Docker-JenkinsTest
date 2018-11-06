@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools { 
-        maven 'Default' 
+        maven 'Maven' 
     }
     stages {
         stage ('Compile') {
